@@ -2,7 +2,9 @@
   <header>
     <ul>
       <li v-for="page in pages" :key="page.name">
-        <a :href="page.url">{{ page.name }}</a>
+        <a :href="page.url" @mouseover="onHover" @mouseleave="onLeave">{{
+          page.name
+        }}</a>
       </li>
     </ul>
   </header>
@@ -10,12 +12,30 @@
 
 <script lang="ts">
 import pages from "~/assets/pages.json";
+import { gsap } from "gsap";
+
 export default {
   name: "Header",
   data() {
     return {
       pages,
     };
+  },
+  methods: {
+    onHover(event: MouseEvent) {
+      gsap.to(event.target, {
+        borderBottomWidth: 5,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+    },
+    onLeave(event: MouseEvent) {
+      gsap.to(event.target, {
+        borderBottomWidth: 0,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+    },
   },
 };
 </script>
@@ -28,6 +48,7 @@ header {
   position: sticky;
   top: 0;
   background-color: white;
+
   ul {
     display: flex;
     margin: 0;
@@ -46,6 +67,7 @@ header {
         height: 100%;
         justify-content: center;
         align-items: center;
+        border-bottom-color: $main-color;
       }
     }
   }

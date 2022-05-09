@@ -6,4 +6,13 @@ export default defineNuxtConfig({
     strict: true,
   },
   css: ["@/assets/style/fonts.scss"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/style/colors.scss";',
+        },
+      },
+    },
+  },
 });

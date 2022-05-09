@@ -21,7 +21,7 @@ module.exports = {
   rules: {
     "vue/multi-word-component-names": "off",
     semi: "error",
-    quotes: ["error", "double"],
+    quotes: ["error", "double", { avoidEscape: true }],
     "arrow-body-style": "error",
     "arrow-parens": "error",
     "arrow-spacing": "error",
