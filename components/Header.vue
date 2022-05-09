@@ -1,7 +1,11 @@
 <template>
   <header>
     <ul>
-      <li v-for="page in pages" :key="page.name">
+      <li
+        v-for="page in pages"
+        :key="page.name"
+        :style="{ width: 100.0 / pages.length + '%' }"
+      >
         <a :href="page.url" @mouseover="onHover" @mouseleave="onLeave">{{
           page.name
         }}</a>
@@ -11,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import pages from "~/assets/pages.json";
+import pages from "~/assets/data/pages.json";
 import { gsap } from "gsap";
 
 export default {
@@ -58,7 +62,7 @@ header {
 
     li {
       display: block;
-      width: 100px;
+      width: calc(100% / var(--element-count));
       height: 100%;
 
       a {
