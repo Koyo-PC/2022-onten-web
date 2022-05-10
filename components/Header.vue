@@ -29,6 +29,7 @@ export default {
     onHover(event: MouseEvent) {
       gsap.to(event.target, {
         borderBottomWidth: 5,
+        borderBottomColor: "",
         duration: 0.5,
         ease: "power3.out",
       });
@@ -36,6 +37,7 @@ export default {
     onLeave(event: MouseEvent) {
       gsap.to(event.target, {
         borderBottomWidth: 0,
+        borderBottomColor: "transparent",
         duration: 0.5,
         ease: "power3.out",
       });

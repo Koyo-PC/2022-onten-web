@@ -1,0 +1,116 @@
+{
+  "1A": {
+    "floor": 3,
+    "building": 0,
+    "loc": [12, 14]
+  },
+  "1B": {
+    "floor": 3,
+    "building": 0,
+    "loc": [8, 10]
+  },
+  "1C": {
+    "floor": 3,
+    "building": 0,
+    "loc": [6, 8]
+  },
+  "1D": {
+    "floor": 3,
+    "building": 0,
+    "loc": [4, 6]
+  },
+  "2A": {
+    "floor": 2,
+    "building": 0,
+    "loc": [12, 14]
+  },
+  "2B": {
+    "floor": 2,
+    "building": 0,
+    "loc": [8, 10]
+  },
+  "2C": {
+    "floor": 2,
+    "building": 0,
+    "loc": [6, 8]
+  },
+  "2D": {
+    "floor": 2,
+    "building": 0,
+    "loc": [4, 6]
+  },
+  "3A": {
+    "floor": 1,
+    "building": 0,
+    "loc": [12, 14]
+  },
+  "3B": {
+    "floor": 1,
+    "building": 0,
+    "loc": [8, 10]
+  },
+  "3C": {
+    "floor": 1,
+    "building": 0,
+    "loc": [6, 8]
+  },
+  "3D": {
+    "floor": 1,
+    "building": 0,
+    "loc": [4, 6]
+  },
+  "物理講義室": {
+    "floor": 4,
+    "building": 1,
+    "loc": [5, 7]
+  },
+  "視聴覚教室": {
+    "floor": 4,
+    "building": 1,
+    "loc": [7, 10]
+  },
+  "生物実験室": {
+    "floor": 3,
+    "building": 1,
+    "loc": [0, 3],
+    "spread": true
+  },
+  "合併教室": {
+    "floor": 3,
+    "building": 1,
+    "loc": [7, 10]
+  },
+  "美術室": {
+    "floor": 3,
+    "building": 1,
+    "loc": [15, 17],
+    "spread": true
+  },
+  "生物講義室": {
+    "floor": 3,
+    "building": 1,
+    "loc": [5, 7]
+  },
+  "化学実験室": {
+    "floor": 2,
+    "building": 1,
+    "loc": [0, 3],
+    "spread": true
+  },
+  "化学講義室": {
+    "floor": 2,
+    "building": 1,
+    "loc": [4, 6]
+  },
+  "世界史教室": {
+    "floor": 2,
+    "building": 1,
+    "loc": [7, 10]
+  },
+  "図書室": {
+    "floor": 2,
+    "building": 1,
+    "loc": [15, 17],
+    "spread": true
+  }
+}

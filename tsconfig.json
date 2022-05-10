@@ -3,5 +3,9 @@
   "extends": "./.nuxt/tsconfig.json",
   "paths": {
     "@": ["src"]
+  },
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "resolveJsonModule": true
   }
 }

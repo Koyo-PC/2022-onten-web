@@ -5,7 +5,11 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
-  css: ["destyle.css", "@/assets/style/fonts.scss"],
+  css: [
+    "destyle.css",
+    "@/assets/style/default.scss",
+    "@/assets/style/fonts.scss",
+  ],
   vite: {
     css: {
       preprocessorOptions: {
