@@ -62,10 +62,10 @@ export default {
   background-color: #ccffcc88;
   //display: grid;
   //place-content: center;
-  border: 1px solid #aaa;
+  //border: 1px solid #aaa;
   cursor: pointer;
   &:hover {
-    background-color: #ccffccff;
+    background-color: #ccffcccc;
   }
   display: grid;
   place-content: center;
