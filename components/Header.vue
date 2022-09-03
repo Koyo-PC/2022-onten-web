@@ -48,11 +48,12 @@ export default {
 
 <style scoped lang="scss">
 header {
+  position: sticky;
+  top: 0;
   display: block;
   width: 100%;
   height: 50px;
-  position: sticky;
-  top: 0;
+  z-index: 9999;
   background-color: white;
 
   ul {
