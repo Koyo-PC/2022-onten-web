@@ -2,9 +2,20 @@
   <div>
     <Header />
     <div id="container">
-      <div id="main-logo">
-        <img class="main-background-image" src="~assets/image/logo_back.png" alt="">
-        <img class="main-logo-image" src="~assets/image/logo_black.png" alt="">
+      <div id="top-content">
+        <div id="top-title">第75回 音楽と展覧の会</div>
+        <div id="top-logo">
+          <img
+            class="top-background-image"
+            src="~assets/image/logo_back.png"
+            alt=""
+          />
+          <img
+            class="top-logo-image"
+            src="~assets/image/logo_black.png"
+            alt=""
+          />
+        </div>
       </div>
     </div>
     <Footer />
@@ -14,26 +25,56 @@
 #container {
   width: 100%;
   height: 90vh;
-  background-color: $back-color-secondary;
+  $stripe-width: 30px;
+  $stripe-color-fore: lighten($back-color-primary, 20);
+  $stripe-color-back: lighten($back-color-secondary, 10);
+  background-color: $stripe-color-back;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    $stripe-color-fore,
+    $stripe-color-fore $stripe-width,
+    transparent 0,
+    transparent $stripe-width * 2
+  );
 
-  #main-logo {
+  #top-content {
     position: relative;
     max-height: 100%;
     aspect-ratio: 1;
     margin: 0 auto;
 
-    .main-background-image {
+    $title-height: 100px;
+
+    #top-title {
+      width: 85%;
+      height: $title-height;
+      margin: 0 auto;
+      padding: 10px;
+      font-size: min(5vw, 70px);
+      @include mobile {
+        font-size: 7vw;
+      }
+      line-height: $title-height;
+      font-weight: bold;
+      color: #fff;
+      text-align: justify;
+      text-align-last: justify;
+      text-justify: inter-ideograph;
+      white-space: nowrap;
+    }
+
+    .top-background-image {
       position: absolute;
-      top: 0;
+      top: $title-height;
       display: block;
       width: 100%;
-      height: 100%;
+      height: calc(100% - $title-height);
       object-fit: contain;
     }
 
-    .main-logo-image {
+    .top-logo-image {
       position: absolute;
-      top: 50%;
+      top: calc((100% + $title-height) / 2);
       left: 0;
       right: 0;
       display: block;
