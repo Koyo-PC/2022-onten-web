@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Home",
+    "url": "/"
+  },
+  {
+    "name": "Map",
+    "url": "/map"
+  },
+  {
+    "name": "Events",
+    "url": "/events"
+  },
+  {
+    "name": "Circles",
+    "url": "/circles"
+  },
+  {
+    "name": "Pamphlet",
+    "url": "/pamphlet"
+  }
+]
