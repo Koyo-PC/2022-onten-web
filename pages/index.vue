@@ -13,9 +13,9 @@
           <img id="top-logo-image" src="~assets/image/logo_black.png" alt="" />
         </div>
       </div>
-      <div id="info">
-        <div id="date">9.23</div>
-      </div>
+    </div>
+    <div id="info">
+      <div id="date">9.23</div>
     </div>
     <Footer />
   </div>
@@ -84,15 +84,13 @@
       filter: invert(100%) drop-shadow(0 0 10px $back-color-secondary);
     }
   }
-
-  #info {
-    #date {
-      text-align: center;
-      font-size: 250px;
-      @include mobile {
-        font-size: 100px;
-      }
-      color: #fff;
+}
+#info {
+  #date {
+    text-align: center;
+    font-size: 250px;
+    @include mobile {
+      font-size: 100px;
     }
   }
 }
