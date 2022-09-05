@@ -1,12 +1,11 @@
 name: Deploy to dev.koyo-onten.net
 
 on:
+  workflow_dispatch:
   push:
 #    branches-ignore: # Disable
 #      - '**'
     branches: [ dev ]
-
-  workflow_dispatch:
 
 jobs:
   build:
