@@ -1,8 +1,16 @@
 <template>
-  <div class="circle-tile">
-    <img :src="`/img/circle/${name}/logo.png`" alt="" />
-    {{ circles[name] }}
-  </div>
+  <a :href="circles[name].description !== undefined ? null : `/circle/${name}`">
+    <div class="circle-tile">
+      <img :src="`/img/circle/${name}/logo.png`" alt="" />
+      <h1>{{ circles[name].name }}</h1>
+      <span
+        class="circle-tile-description"
+        v-if="circles[name].description !== undefined"
+        v-text="circles[name].description"
+      />
+      <span v-else>団体ページへ→</span>
+    </div>
+  </a>
 </template>
 <script setup lang="ts">
 import circles from "../assets/data/circles.json";
@@ -21,22 +29,29 @@ export default {
 
 <style lang="scss" scoped>
 .circle-tile {
-  width: 200px;
+  width: 400px;
   border: 1px solid #ccc;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
   box-shadow: 0 0 10px #ccc;
   transition: 0.2s;
+  background-color: red;
+
   &:hover {
     box-shadow: 0 0 10px #aaa;
   }
+
   img {
     display: block;
     width: 100%;
     aspect-ratio: 1;
     object-fit: contain;
   }
-  background-color: red;
+
+  .circle-tile-description {
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+  }
 }
 </style>

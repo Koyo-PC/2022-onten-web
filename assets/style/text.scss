@@ -1,0 +1,19 @@
+h1 {
+  margin: 10px 0;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+p {
+  margin: 10px 0;
+
+  &.center {
+    text-align: center;
+  }
+
+  strong {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
