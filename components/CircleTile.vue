@@ -1,14 +1,9 @@
 <template>
-  <a :href="circles[name].description !== undefined ? null : `/circle/${name}`">
+  <a :href="`/circle/${name}`">
     <div class="circle-tile">
       <img :src="`/img/circle/${name}/logo.png`" alt="" />
       <h1>{{ circles[name].name }}</h1>
-      <span
-        class="circle-tile-description"
-        v-if="circles[name].description !== undefined"
-        v-text="circles[name].description"
-      />
-      <span v-else>団体ページへ→</span>
+      <span>団体ページへ→</span>
     </div>
   </a>
 </template>
@@ -47,11 +42,6 @@ export default {
     width: 100%;
     aspect-ratio: 1;
     object-fit: contain;
-  }
-
-  .circle-tile-description {
-    font-size: 0.8rem;
-    white-space: pre-wrap;
   }
 }
 </style>

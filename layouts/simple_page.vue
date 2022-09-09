@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 #container {
   padding: 10px 10%;
-  font-weight: 300;
+  font-weight: 400;
 }
 </style>
 <style lang="scss">

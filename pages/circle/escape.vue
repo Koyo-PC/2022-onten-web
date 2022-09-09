@@ -137,6 +137,7 @@
 
 <script setup lang="ts">
 import { definePageMeta } from "#imports";
+import "../../assets/style/text.scss";
 
 definePageMeta({
   layout: "simple-page",
