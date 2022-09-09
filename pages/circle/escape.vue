@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>脱出ゲーム</h1>
+    <CircleHead name="escape" />
     <p class="center">
       あなたの小さな<strong>&quot;ひらめき&quot;</strong>と<strong>&quot;気づき&quot;</strong>が脱出成功へと導く<br />
       あなたは<strong>最大の謎</strong>を解き、脱出することができるのか

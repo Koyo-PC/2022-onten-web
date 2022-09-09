@@ -59,6 +59,8 @@ footer {
       text-align: center;
       display: flex;
       flex-direction: column;
+      color: inherit;
+      text-decoration: none;
       .sns-link-image {
         display: block;
         height: calc(100% - 14px);

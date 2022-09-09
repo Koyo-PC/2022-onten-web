@@ -1,7 +1,6 @@
 <template>
   <div id="circle_root">
-    <img id="circle_logo" :src="`/img/circle/${name}/logo.png`" alt="" />
-    <h1 id="circle_title">{{ circles[name].name }}</h1>
+    <CircleHead :name="name" />
     <p id="circle_description">{{ circles[name].description }}</p>
   </div>
 </template>
@@ -10,6 +9,7 @@
 import { definePageMeta, useRoute } from "#imports";
 import circles from "../../assets/data/circles.json";
 import "../../assets/style/text.scss";
+import CircleHead from "~/components/CircleHead.vue";
 
 definePageMeta({
   layout: "simple-page",
@@ -25,14 +25,6 @@ export default {
 
 <style lang="scss" scoped>
 #circle_root {
-  #circle_logo {
-    display: block;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  #circle_title {
-    margin: 50px auto;
-  }
   #circle_description {
     margin: 50px auto;
     white-space: pre-wrap;

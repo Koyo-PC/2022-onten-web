@@ -23,25 +23,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.circle-tile {
-  width: 400px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 0 0 10px #ccc;
-  transition: 0.2s;
-  background-color: red;
+a {
+  color: inherit;
+  text-decoration: none;
+  .circle-tile {
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px #ccc;
+    transition: 0.2s;
+    background-color: red;
 
-  &:hover {
-    box-shadow: 0 0 10px #aaa;
-  }
+    &:hover {
+      box-shadow: 0 0 10px #aaa;
+    }
 
-  img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: contain;
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>生物部</h1>
+    <CircleHead name="biology" />
     <h2>部長挨拶</h2>
     <p>
       今年は去年よりもさらに部員が増え、２年生６人、１年生８人となりました。
