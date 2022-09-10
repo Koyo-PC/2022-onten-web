@@ -27,39 +27,39 @@
         </div>
       </div>
       <div id="ticket">
-        <h1>重要なお知らせ</h1>
+        <h1>＜＜ 重要なお知らせ ＞＞</h1>
         <p>
           今年の音楽と展覧の会では、保護者以外は入場にチケットが必要です。<br />
           下記リンクからダウンロード・プリントアウトし、必要事項を記入した上で受付に提出をお願いします。
         </p>
-        <a
-          href="~assets/files/ticket.pdf"
-          download="第75回音展 入場チケット.pdf"
+        <a href="/files/ticket.pdf" download="第75回音展_入場チケット.pdf"
           >チケットをダウンロード</a
         >
       </div>
       <h2>アクセス</h2>
       <div id="access">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26227.604969780583!2d135.30494707561803!3d34.74423984707946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f36ab1b8e56b%3A0x41b0ac08629de653!2z55Sy6Zm95a2m6Zmi6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1662826217343!5m2!1sja!2sjp"
-          width="800"
-          height="600"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <ul>
-          <li>阪急電鉄「甲陽園」駅下車、徒歩約20分</li>
-          <li>阪急/阪神バス「柏堂町」駅下車、南へ徒歩約5分</li>
-          <li>校内への車の乗り入れは全面禁止にしております</li>
-          <li>
-            学校周辺はすべて駐車禁止ですので、公共の交通機関をご利用ください
-          </li>
-          <li>
-            例年、北山緑化植物園より「利用者が駐車できない」との苦情があります。植物園への駐車もご遠慮ください
-          </li>
-        </ul>
+        <div id="access-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26227.604969780583!2d135.30494707561803!3d34.74423984707946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f36ab1b8e56b%3A0x41b0ac08629de653!2z55Sy6Zm95a2m6Zmi6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1662826217343!5m2!1sja!2sjp"
+            width="800"
+            height="600"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <ul>
+            <li>阪急電鉄「甲陽園」駅下車、徒歩約20分</li>
+            <li>阪急/阪神バス「柏堂町」駅下車、南へ徒歩約5分</li>
+            <li>校内への車の乗り入れは全面禁止にしております</li>
+            <li>
+              学校周辺はすべて駐車禁止ですので、公共の交通機関をご利用ください
+            </li>
+            <li>
+              例年、北山緑化植物園より「利用者が駐車できない」との苦情があります。植物園への駐車もご遠慮ください
+            </li>
+          </ul>
+        </div>
       </div>
       <div id="note">
         <h2>お知らせ</h2>
@@ -253,19 +253,24 @@ onMounted(() => {
     }
   }
   #access {
-    max-width: 90%;
-    margin: 0 auto;
-    iframe {
-      display: block;
-      max-width: 100%;
-      max-height: 60vw;
-    }
-    ul {
-      padding: 30px 0;
+    text-align: center;
+    #access-container {
+      display: inline-block;
+      max-width: 90%;
+      margin: 0 auto;
+      iframe {
+        display: block;
+        max-width: 100%;
+        max-height: 600px;
+      }
+      ul {
+        text-align: left;
+        padding: 30px 0;
+      }
     }
   }
   #note {
-    max-width: 90%;
+    max-width: 80%;
     margin: 0 auto;
     ul {
       padding: 30px 0;
