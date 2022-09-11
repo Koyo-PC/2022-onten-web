@@ -63,7 +63,7 @@ export default defineNuxtConfig({
         {
           hid: "og:image",
           property: "og:image",
-          content: `${url}/logo-color.png`,
+          content: `${url}/logo_color.png`,
         },
         { name: "twitter:card", content: "summary" },
       ],
