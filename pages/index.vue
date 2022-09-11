@@ -5,8 +5,33 @@
         <div id="top-title">第75回 音楽と展覧の会</div>
         <div id="top-logo">
           <img
-            id="top-background-image"
+            id="top-background-image-back"
+            src="~assets/image/logo_background/background.png"
+            alt=""
+          />
+          <img
+            id="top-background-image-main"
             src="~assets/image/logo_back.png"
+            alt=""
+          />
+          <img
+            id="top-background-image-man-1"
+            src="~assets/image/logo_background/man_1.png"
+            alt=""
+          />
+          <img
+            id="top-background-image-man-1-mask"
+            src="~assets/image/logo_background/man_1_mask.png"
+            alt=""
+          />
+          <img
+            id="top-background-image-man-2"
+            src="~assets/image/logo_background/man_2.png"
+            alt=""
+          />
+          <img
+            id="top-background-image-man-2-mask"
+            src="~assets/image/logo_background/man_2_mask.png"
             alt=""
           />
           <img id="top-logo-image" src="~assets/image/logo_black.png" alt="" />
@@ -156,6 +181,18 @@ onMounted(() => {
   window.setInterval(() => {
     nowTime.value = Date.now().valueOf();
   }, 1000);
+  const man_1 = document.getElementById("top-background-image-man-1");
+  const man_2 = document.getElementById("top-background-image-man-2");
+  if (man_1 != null && man_2 != null) {
+    window.addEventListener("mousemove", (e) => {
+      if (man_1.style.getPropertyValue("--isautomove") == "true") return;
+      man_1.style.transform = `rotate(${-(
+        6 *
+        (1 - e.x / window.outerWidth)
+      )}deg)`;
+      man_2.style.transform = `rotate(${4 * (e.x / window.outerWidth)}deg)`;
+    });
+  }
 });
 </script>
 <style lang="scss" scoped>
@@ -201,7 +238,12 @@ onMounted(() => {
       white-space: nowrap;
     }
 
-    #top-background-image {
+    #top-background-image-back,
+    #top-background-image-man-1,
+    #top-background-image-man-1-mask,
+    #top-background-image-man-2,
+    #top-background-image-man-2-mask,
+    #top-background-image-main {
       position: absolute;
       top: $title-height;
       display: block;
@@ -209,7 +251,42 @@ onMounted(() => {
       height: calc(100% - $title-height - 50px);
       object-fit: contain;
     }
+    #top-background-image-man-1 {
+      transform-origin: 76.5% 60.3%;
+      --isautomove: "false";
 
+      @include mobile {
+        --isautomove: "true";
+        animation: m1 3.51s steps(1000) infinite;
+        animation-timing-function: ease-out;
+        @keyframes m1 {
+          0%,
+          100% {
+            transform: rotate(0deg);
+          }
+          50% {
+            transform: rotate(-6deg);
+          }
+        }
+      }
+    }
+
+    #top-background-image-man-2 {
+      transform-origin: 72.4% 60.3%;
+      @include mobile {
+        animation: m2 4s steps(1000) infinite;
+        animation-timing-function: ease-out;
+        @keyframes m2 {
+          0%,
+          100% {
+            transform: rotate(0deg);
+          }
+          50% {
+            transform: rotate(4deg);
+          }
+        }
+      }
+    }
     #top-logo-image {
       position: absolute;
       top: calc((100% + $title-height) / 2);
