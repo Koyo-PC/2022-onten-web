@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "destyle.css": "^3.0.2",
-    "gsap": "^3.10.4"
+    "gsap": "^3.10.4",
+    "vue-gtag": "^2.0.1",
+    "vue-gtag-next": "^1.14.0"
   }
 }
