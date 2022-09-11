@@ -141,6 +141,13 @@ import "../../assets/style/text.scss";
 import circles from "assets/data/circles.json";
 useHead({
   title: circles["escape"].name,
+  meta: [
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: `宴Joy | ${circles["escape"].name}`,
+    },
+  ],
 });
 definePageMeta({
   layout: "simple-page",

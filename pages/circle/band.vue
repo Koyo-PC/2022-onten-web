@@ -51,6 +51,13 @@ import { definePageMeta, useHead } from "#imports";
 import circles from "assets/data/circles.json";
 useHead({
   title: circles["band"].name,
+  meta: [
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: `宴Joy | ${circles["band"].name}`,
+    },
+  ],
 });
 definePageMeta({
   layout: "simple-page",

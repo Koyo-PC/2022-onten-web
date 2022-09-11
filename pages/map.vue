@@ -44,6 +44,13 @@ import { gsap } from "gsap";
 export default {
   head: {
     title: "校内マップ",
+    meta: [
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "宴Joy | 校内マップ",
+      },
+    ],
   },
   mounted() {
     console.log("aaaas");

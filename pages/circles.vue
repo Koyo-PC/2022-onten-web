@@ -15,6 +15,13 @@ import circles from "../assets/data/circles.json";
 
 useHead({
   title: "企画一覧",
+  meta: [
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "宴Joy | 企画一覧",
+    },
+  ],
 });
 
 definePageMeta({

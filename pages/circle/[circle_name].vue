@@ -16,6 +16,13 @@ useHead({
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   title: circles[name].name,
+  meta: [
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: `宴Joy | ${circles[name].name}`,
+    },
+  ],
 });
 definePageMeta({
   layout: "simple-page",

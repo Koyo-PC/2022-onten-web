@@ -148,6 +148,13 @@ import { definePageMeta, onMounted, ref, useHead } from "#imports";
 
 useHead({
   title: "トップページ",
+  meta: [
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "宴Joy | トップページ",
+    },
+  ],
   script: [
     {
       type: "text/javascript",
