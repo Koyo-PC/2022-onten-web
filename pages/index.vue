@@ -188,9 +188,12 @@ onMounted(() => {
       if (man_1.style.getPropertyValue("--isautomove") == "true") return;
       man_1.style.transform = `rotate(${-(
         6 *
-        (1 - e.x / window.outerWidth)
+        (1 - e.x / window.outerWidth) *
+        (e.y / window.outerHeight)
       )}deg)`;
-      man_2.style.transform = `rotate(${4 * (e.x / window.outerWidth)}deg)`;
+      man_2.style.transform = `rotate(${
+        4 * (e.x / window.outerWidth) * (1 - e.y / window.outerHeight)
+      }deg)`;
     });
   }
 });
