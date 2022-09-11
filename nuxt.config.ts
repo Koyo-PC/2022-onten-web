@@ -1,5 +1,8 @@
 import { defineNuxtConfig } from "nuxt";
 
+// TODO 本番鯖上げる時変更する!
+const url = "https://dev.koyo-onten.net";
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   typescript: {
@@ -41,11 +44,10 @@ export default defineNuxtConfig({
           content: "第75回 音楽と展覧の会「宴Joy」公式サイト",
         },
         { hid: "og:type", property: "og:type", content: "website" },
-        // TODO 本番鯖上げる時変更する!
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://dev.koyo-onten.net",
+          content: url,
         },
         {
           hid: "og:title",
@@ -61,7 +63,7 @@ export default defineNuxtConfig({
         {
           hid: "og:image",
           property: "og:image",
-          content: "/logo-color.png",
+          content: `${url}/logo-color.png`,
         },
         { name: "twitter:card", content: "summary" },
       ],
