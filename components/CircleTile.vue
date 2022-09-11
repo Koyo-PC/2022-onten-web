@@ -1,7 +1,10 @@
 <template>
   <a :href="`/circle/${name}`">
     <div class="circle-tile">
-      <img :src="`/img/circle/${name}/logo.png`" alt="" />
+      <img
+        :src="`/img/circle/${name}/logo.png`"
+        :alt="`${circles[name].name}ロゴ`"
+      />
       <h1>{{ circles[name].name }}</h1>
       <span>団体ページへ→</span>
     </div>
@@ -28,13 +31,11 @@ a {
   text-decoration: none;
   .circle-tile {
     width: 400px;
-    border: 1px solid #ccc;
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
     box-shadow: 0 0 10px #ccc;
     transition: 0.2s;
-    background-color: red;
 
     &:hover {
       box-shadow: 0 0 10px #aaa;

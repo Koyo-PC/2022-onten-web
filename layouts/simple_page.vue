@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Loading :loaded="loaded" />
     <Header />
     <div id="container">
       <slot />
@@ -7,7 +8,15 @@
     <Footer />
   </div>
 </template>
+<script setup lang="ts">
+import { onMounted, ref } from "#imports";
 
+const loaded = ref(false);
+
+onMounted(() => {
+  loaded.value = true;
+});
+</script>
 <script lang="ts">
 export default {
   name: "simple-page",

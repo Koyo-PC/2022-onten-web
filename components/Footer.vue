@@ -16,7 +16,7 @@
           class="sns-link-image"
           src="~assets/image/sns/instagram.svg"
           alt="Instagram icon"
-        /><span class="sns-link-text">@koyo.school.fes2022</span></a
+        /><span class="sns-link-text">koyo.school.fes2022</span></a
       >
     </div>
     <div id="footer-copyright">&copy;2022 甲陽PC同好会</div>
