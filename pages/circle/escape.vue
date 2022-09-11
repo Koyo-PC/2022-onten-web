@@ -136,9 +136,12 @@
 </template>
 
 <script setup lang="ts">
-import { definePageMeta } from "#imports";
+import { definePageMeta, useHead } from "#imports";
 import "../../assets/style/text.scss";
-
+import circles from "assets/data/circles.json";
+useHead({
+  title: circles["escape"].name,
+});
 definePageMeta({
   layout: "simple-page",
 });

@@ -4,8 +4,10 @@
     <Footer />
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: "events",
-};
+<script setup lang="ts">
+import { useHead } from "#imports";
+
+useHead({
+  title: "イベント",
+});
 </script>

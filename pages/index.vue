@@ -40,6 +40,7 @@
     </div>
     <div id="info">
       <div id="date">9.23</div>
+      <div id="time">9:00〜15:00<br />(講堂, 中央ステージ 〜15:30)</div>
       {{ nowTime.value }}
       <div id="date-counter" v-if="nowTime < beginTime">
         {{ date_counter_content() }}
@@ -146,6 +147,7 @@
 import { definePageMeta, onMounted, ref, useHead } from "#imports";
 
 useHead({
+  title: "トップページ",
   script: [
     {
       type: "text/javascript",
@@ -164,15 +166,15 @@ const beginTime = new Date("2022/9/23 9:00:00").valueOf();
 const nowTime = ref(Date.now().valueOf());
 const date_counter_content = () => {
   if (beginTime - nowTime.value > 1000 * 60 * 60 * 24) {
-    return `音展まであと${Math.floor(
+    return `開催まであと${Math.floor(
       (beginTime - nowTime.value) / 1000 / 60 / 60 / 24
     )}日`;
   } else if (beginTime - nowTime.value > 1000 * 60 * 60) {
-    return `音展まであと${Math.floor(
+    return `開催まであと${Math.floor(
       (beginTime - nowTime.value) / 1000 / 60 / 60
     )}時間`;
   } else {
-    return `音展まであと${Math.floor(
+    return `開催まであと${Math.floor(
       (beginTime - nowTime.value) / 1000 / 60
     )}分`;
   }
@@ -200,7 +202,7 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 #background {
-  width: 100%;
+  margin: -50px -10vw 50px;
   //height: 90vh;
   $stripe-width: 30px;
   $stripe-color-fore: lighten($back-color-primary, 20);
@@ -239,6 +241,7 @@ onMounted(() => {
       text-align-last: justify;
       text-justify: inter-ideograph;
       white-space: nowrap;
+      filter: drop-shadow(0 0 10px $back-color-secondary);
     }
 
     #top-background-image-back,
@@ -306,12 +309,25 @@ onMounted(() => {
 }
 #info {
   margin-bottom: 100px;
+  @include mobile {
+    margin-bottom: 60px;
+  }
   text-align: center;
   #date {
     text-align: center;
     font-size: 250px;
+    margin-bottom: -60px;
     @include mobile {
       font-size: 100px;
+      margin-bottom: -20px;
+    }
+  }
+  #time {
+    margin-bottom: 60px;
+    font-size: 30px;
+    @include mobile {
+      font-size: 20px;
+      margin-bottom: 40px;
     }
   }
   #date-counter {
@@ -343,7 +359,6 @@ h2 {
   width: 80%;
   height: 500px;
   margin: 0 auto 50px;
-  overflow: scroll;
   &:not(.twitter-timeline-rendered) {
     visibility: hidden;
   }
@@ -392,10 +407,5 @@ h2 {
       }
     }
   }
-}
-</style>
-<style lang="scss">
-#container {
-  padding: 0 !important;
 }
 </style>

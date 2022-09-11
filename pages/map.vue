@@ -42,6 +42,9 @@ import { NuxtConfig } from "nuxt";
 import { gsap } from "gsap";
 
 export default {
+  head: {
+    title: "校内マップ",
+  },
   mounted() {
     console.log("aaaas");
     console.log("aaaa");

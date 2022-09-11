@@ -25,7 +25,9 @@ export default {
 
 <style lang="scss" scoped>
 #container {
+  position: relative;
   padding: 50px 10%;
   font-weight: 400;
+  overflow-x: hidden;
 }
 </style>

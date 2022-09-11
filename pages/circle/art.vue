@@ -15,8 +15,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { definePageMeta } from "#imports";
-
+import { definePageMeta, useHead } from "#imports";
+import circles from "assets/data/circles.json";
+useHead({
+  title: circles["art"].name,
+});
 definePageMeta({
   layout: "simple-page",
 });

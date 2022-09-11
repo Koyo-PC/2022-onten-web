@@ -10,8 +10,12 @@
   </div>
 </template>
 <script setup lang="ts">
-import { definePageMeta } from "#imports";
+import { definePageMeta, useHead } from "#imports";
 import circles from "../assets/data/circles.json";
+
+useHead({
+  title: "企画一覧",
+});
 
 definePageMeta({
   layout: "simple-page",
