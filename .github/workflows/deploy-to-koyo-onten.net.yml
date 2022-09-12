@@ -1,11 +1,11 @@
-name: Deploy to dev.koyo-onten.net
+name: Deploy to koyo-onten.net
 
 on:
   workflow_dispatch:
   push:
 #    branches-ignore: # Disable
 #      - '**'
-    branches: [ dev ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -42,10 +42,10 @@ jobs:
           known_hosts: 'dummy'
 
       - name: Adding Known Hosts
-        run: ssh-keyscan -H dev.koyo-onten.net >> ~/.ssh/known_hosts
+        run: ssh-keyscan -H koyo-onten.net >> ~/.ssh/known_hosts
 
       - name: Deploy
-        run: rsync -ahvz ./.output/ koyo-onten@dev.koyo-onten.net:~/dev/server/ --bwlimit=8192 --timeout=600 --rsync-path='sudo rsync'
+        run: rsync -ahvz ./.output/ koyo-onten@koyo-onten.net:~/production/server/ --bwlimit=8192 --timeout=600 --rsync-path='sudo rsync'
 
       - name: Restart
-        run: ssh koyo-onten@dev.koyo-onten.net '~/dev/restart.sh'
+        run: ssh koyo-onten@koyo-onten.net '~/production/restart.sh'
