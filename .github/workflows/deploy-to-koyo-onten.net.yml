@@ -1,0 +1,51 @@
+name: Deploy to koyo-onten.net
+
+on:
+  workflow_dispatch:
+  push:
+#    branches-ignore: # Disable
+#      - '**'
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node v17
+        uses: actions/setup-node@v3
+        with:
+          node-version: 17
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Nuxt build
+        run: npm run build
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'dummy'
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H koyo-onten.net >> ~/.ssh/known_hosts
+
+      - name: Deploy
+        run: rsync -ahvz ./.output/ koyo-onten@koyo-onten.net:~/production/server/ --bwlimit=8192 --timeout=600 --rsync-path='sudo rsync'
+
+      - name: Restart
+        run: ssh koyo-onten@koyo-onten.net '~/production/restart.sh'

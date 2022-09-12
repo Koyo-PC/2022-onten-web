@@ -75,6 +75,8 @@ header {
         justify-content: center;
         align-items: center;
         border-bottom-color: $main-color;
+        text-decoration: none;
+        color: inherit;
       }
     }
   }
