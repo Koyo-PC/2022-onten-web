@@ -1,40 +1,26 @@
 <template>
   <div>
-    <div id="tiles">
-      <CircleTile
-        v-for="name in Object.keys(circles)"
-        :key="name"
-        :name="name"
-      ></CircleTile>
-    </div>
+    <h1>COMING SOON...</h1>
+    <a id="to-top" href="/">トップページへ</a>
   </div>
 </template>
 <script setup lang="ts">
-import { definePageMeta, useHead } from "#imports";
-import circles from "../assets/data/circles.json";
-
-useHead({
-  title: "企画一覧",
-  meta: [
-    {
-      hid: "og:title",
-      property: "og:title",
-      content: "宴Joy | 企画一覧",
-    },
-  ],
-});
+import { definePageMeta } from "#imports";
 
 definePageMeta({
   layout: "simple-page",
 });
 </script>
-
 <style lang="scss" scoped>
-#tiles {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 10px;
+#to-top {
+  display: block;
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #303030;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
 }
 </style>
