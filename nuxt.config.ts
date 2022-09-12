@@ -1,7 +1,6 @@
 import { defineNuxtConfig } from "nuxt";
 
-// TODO 本番鯖上げる時変更する!
-const url = "https://dev.koyo-onten.net";
+const url = "https://koyo-onten.net";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
