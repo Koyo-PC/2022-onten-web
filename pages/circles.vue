@@ -5,7 +5,18 @@
   </div>
 </template>
 <script setup lang="ts">
-import { definePageMeta } from "#imports";
+import { definePageMeta, useHead } from "#imports";
+
+useHead({
+  title: "企画一覧",
+  meta: [
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "宴Joy | 企画一覧",
+    },
+  ],
+});
 
 definePageMeta({
   layout: "simple-page",

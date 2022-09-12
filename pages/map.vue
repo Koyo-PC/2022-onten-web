@@ -5,7 +5,18 @@
   </div>
 </template>
 <script setup lang="ts">
-import { definePageMeta } from "#imports";
+import { definePageMeta, useHead } from "#imports";
+
+useHead({
+  title: "校内マップ",
+  meta: [
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "宴Joy | 校内マップ",
+    },
+  ],
+});
 
 definePageMeta({
   layout: "simple-page",
