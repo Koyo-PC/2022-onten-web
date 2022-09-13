@@ -2,7 +2,10 @@
   <div>
     <div id="background">
       <div id="top">
-        <div id="top-title">第75回 音楽と展覧の会</div>
+        <div id="top-title">
+          <span id="top-schoolname">甲陽学院高等学校</span
+          ><span id="top-title-content">第75回 音楽と展覧の会</span>
+        </div>
         <div id="top-logo">
           <img
             id="top-background-image-back"
@@ -49,7 +52,7 @@
     <div id="ticket">
       <h1>＜＜ 重要なお知らせ ＞＞</h1>
       <p>
-        今年の音楽と展覧の会では、保護者以外は入場にチケットが必要です。<br />
+        今年の音楽と展覧の会では、保護者の方以外は入場にチケットが必要です。<br />
         下記リンクからダウンロード・プリントアウトし、必要事項を記入した上で受付に提出をお願いします。
       </p>
       <a href="/files/ticket.pdf" download="第75回音展_入場チケット.pdf"
@@ -107,7 +110,7 @@
           <h1>お手洗い</h1>
           <ul>
             <li>
-              男性用お手洗いは南館全階西側、北館二四階および講堂にございます。
+              男性用お手洗いは南館全階西側、北館二、四階および講堂にございます。
             </li>
             <li>
               女性用お手洗いは南館全階東側、北館三階および講堂、ピロティにございます。
@@ -229,19 +232,16 @@ onMounted(() => {
     max-height: 100vh;
     aspect-ratio: 1;
     margin: 0 auto;
+    padding: 10px 0;
 
-    $title-height: 100px;
+    $title-height: 15vh;
+    $title-height-sp: 10vh;
 
     #top-title {
       width: 85%;
       height: $title-height;
       margin: 0 auto;
-      padding: 10px;
-      font-size: min(5vw, 70px);
-      @include mobile {
-        font-size: 7vw;
-      }
-      line-height: $title-height;
+      padding-top: 10px;
       font-weight: bold;
       color: #fff;
       text-align: justify;
@@ -249,6 +249,26 @@ onMounted(() => {
       text-justify: inter-ideograph;
       white-space: nowrap;
       filter: drop-shadow(0 0 10px $back-color-secondary);
+      #top-schoolname {
+        display: block;
+        padding: 0 20%;
+        line-height: $title-height * 0.4;
+        font-size: min(4vw, 30px);
+        @include mobile {
+          line-height: $title-height * 0.3;
+          font-size: 5vw;
+        }
+      }
+      #top-title-content {
+        display: block;
+        width: 100%;
+        line-height: $title-height * 0.6;
+        font-size: min(6vw, 60px);
+        @include mobile {
+          line-height: $title-height * 0.4;
+          font-size: 7vw;
+        }
+      }
     }
 
     #top-background-image-back,
@@ -258,14 +278,18 @@ onMounted(() => {
     #top-background-image-man-2-mask,
     #top-background-image-main {
       position: absolute;
-      top: $title-height;
+      top: calc($title-height + 20px);
       display: block;
       width: 100%;
-      height: calc(100% - $title-height - 50px);
+      height: calc(100% - $title-height);
+      @include mobile {
+        top: calc($title-height * 0.7 + 20px);
+        height: calc(100% - $title-height * 0.7);
+      }
       object-fit: contain;
     }
     #top-background-image-man-1 {
-      transform-origin: 76.5% 60.3%;
+      transform-origin: 80% 58%;
       --isautomove: "false";
 
       @include mobile {
