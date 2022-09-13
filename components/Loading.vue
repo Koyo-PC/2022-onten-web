@@ -1,6 +1,6 @@
 <template>
   <div id="loading" :class="loaded ? ['loaded'] : null">
-    <img alt="" src="~assets/image/logo_black.png" />
+    <img alt="" src="~assets/image/logo_black.webp" />
     <div class="spinner"></div>
   </div>
 </template>

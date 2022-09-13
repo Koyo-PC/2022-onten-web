@@ -23,7 +23,7 @@
       このページの下の方に準備問題があります！参加する前にぜひ解いてみてください！
     </p>
     <div class="story">
-      <img class="story-img" src="/img/circle/escape/story_1.png" alt="" />
+      <img class="story-img" src="/img/circle/escape/story_1.webp" alt="" />
       <div class="story-content">
         <h3>燃え上がる宴からの脱出</h3>
         <p>
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="story">
-      <img class="story-img" src="/img/circle/escape/story_2.png" alt="" />
+      <img class="story-img" src="/img/circle/escape/story_2.webp" alt="" />
       <div class="story-content">
         <h3>謎めいた牢屋からの脱出</h3>
         <p>

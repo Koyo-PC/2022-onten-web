@@ -1,7 +1,7 @@
 <template>
   <div>
     <CircleHead name="train" />
-    <img id="train-thumb" src="/img/circle/train/DSC_0333.jpeg" alt="" />
+    <img id="train-thumb" src="/img/circle/train/DSC_0333.webp" alt="" />
     <h2>はじめに</h2>
     <p class="indent">
       本日は、甲陽学院高等学校音楽と展覧の会・鉄道同好会ウェブサイトにお越しいただき、ありがとうございます。<br />
@@ -53,22 +53,22 @@ definePageMeta({
 });
 
 const images = [
-  "1662499694522.jpeg",
-  "1662499694590.jpeg",
-  "1662721512803.jpeg",
-  "1662624359000.jpeg",
-  "1662499694590.jpeg",
-  "1662721521354.jpeg",
-  "1662624359770.jpeg",
-  "1662499693727.jpeg",
-  "DSC_0925.jpeg",
-  "DSC_1277.jpeg",
-  "DSC_0508.jpeg",
-  "DSC_0145.jpeg",
-  "1662499694280.jpeg",
-  "1662499694058.jpeg",
-  "DIAGONAL_0001_BURST20220823131655495_COVER.jpeg",
-  "DSC_0528.jpeg",
+  "1662499694522.webp",
+  "1662499694590.webp",
+  "1662721512803.webp",
+  "1662624359000.webp",
+  "1662499694590.webp",
+  "1662721521354.webp",
+  "1662624359770.webp",
+  "1662499693727.webp",
+  "DSC_0925.webp",
+  "DSC_1277.webp",
+  "DSC_0508.webp",
+  "DSC_0145.webp",
+  "1662499694280.webp",
+  "1662499694058.webp",
+  "DIAGONAL_0001_BURST20220823131655495_COVER.webp",
+  "DSC_0528.webp",
 ];
 </script>
 <script lang="ts">

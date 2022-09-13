@@ -2,8 +2,8 @@
   <div>
     <CircleHead name="picture" />
     <div id="pic-club-img">
-      <img src="/img/circle/picture/img_1.jpeg" alt="" />
-      <img src="/img/circle/picture/img_2.jpeg" alt="" />
+      <img src="/img/circle/picture/img_1.webp" alt="" />
+      <img src="/img/circle/picture/img_2.webp" alt="" />
     </div>
     <p id="pic-club-text">
       「ねえねえ❗️<br />

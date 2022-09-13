@@ -11,48 +11,48 @@
       皆様、ぜひお越しください。
     </p>
     <h2>生物室案内図</h2>
-    <img id="bio-map" src="/img/circle/biology/map.png" alt="" />
+    <img id="bio-map" src="/img/circle/biology/map.webp" alt="" />
     <h2>合宿風景</h2>
     <div class="bio-photo" id="bio-photo-1">
-      <img src="/img/circle/biology/img_1.jpg" alt="" />
+      <img src="/img/circle/biology/img_1.webp" alt="" />
       <div>←やる気満々の部員T<br />後ろは作業中のI氏とU氏</div>
     </div>
     <div class="bio-photo-container">
       <div class="bio-photo" id="bio-photo-2">
-        <img src="/img/circle/biology/img_2.jpg" alt="" />
+        <img src="/img/circle/biology/img_2.webp" alt="" />
         <div>
           ←灯火採集の様子<br />
           ブラックライトと白熱球を用いています。
         </div>
       </div>
       <div class="bio-photo" id="bio-photo-4">
-        <img src="/img/circle/biology/img_4.jpg" alt="" />
+        <img src="/img/circle/biology/img_4.webp" alt="" />
         <div>HIDライトで山の斜面を照らしている様子。→</div>
       </div>
     </div>
     <div class="bio-photo-container">
       <div class="bio-photo" id="bio-photo-3">
-        <img src="/img/circle/biology/img_3.jpg" alt="" />
+        <img src="/img/circle/biology/img_3.webp" alt="" />
         <div>
           ↑甲虫屋の３人<br />
           何をみているのかは不明
         </div>
       </div>
       <div class="bio-photo" id="bio-photo-5">
-        <img src="/img/circle/biology/img_5.jpg" alt="" />
+        <img src="/img/circle/biology/img_5.webp" alt="" />
         <div>↑先生同伴の植物園内での採集。目立った成果は無かった模様。</div>
       </div>
     </div>
     <div class="bio-photo-container">
       <div class="bio-photo" id="bio-photo-67">
-        <img src="/img/circle/biology/img_6.jpg" alt="" />
-        <img src="/img/circle/biology/img_7.jpg" alt="" />
+        <img src="/img/circle/biology/img_6.webp" alt="" />
+        <img src="/img/circle/biology/img_7.webp" alt="" />
         <div>↑校舎からの夜景と日の出前↑</div>
       </div>
     </div>
     <div class="bio-photo" id="bio-photo-89">
-      <img src="/img/circle/biology/img_8.jpg" alt="" />
-      <img src="/img/circle/biology/img_9.jpg" alt="" />
+      <img src="/img/circle/biology/img_8.webp" alt="" />
+      <img src="/img/circle/biology/img_9.webp" alt="" />
       <div>
         ↑疲れてお休みになるI氏とM氏<br />
         筆者も寝てみたが、固すぎて身体中が痛かった。
