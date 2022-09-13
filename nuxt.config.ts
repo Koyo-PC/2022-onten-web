@@ -63,11 +63,11 @@ export default defineNuxtConfig({
         {
           hid: "og:image",
           property: "og:image",
-          content: `${url}/logo_color.png`,
+          content: `${url}/logo_color.webp`,
         },
         { name: "twitter:card", content: "summary" },
       ],
-      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+      link: [{ rel: "icon", type: "image/webp", href: "/favicon.webp" }],
     },
   },
   vite: {

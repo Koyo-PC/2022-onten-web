@@ -6,35 +6,35 @@
         <div id="top-logo">
           <img
             id="top-background-image-back"
-            src="~assets/image/logo_background/background.png"
+            src="~assets/image/logo_background/background.webp"
             alt=""
           />
           <img
             id="top-background-image-main"
-            src="~assets/image/logo_back.png"
+            src="~assets/image/logo_back.webp"
             alt=""
           />
           <img
             id="top-background-image-man-1"
-            src="~assets/image/logo_background/man_1.png"
+            src="~assets/image/logo_background/man_1.webp"
             alt=""
           />
           <img
             id="top-background-image-man-1-mask"
-            src="~assets/image/logo_background/man_1_mask.png"
+            src="~assets/image/logo_background/man_1_mask.webp"
             alt=""
           />
           <img
             id="top-background-image-man-2"
-            src="~assets/image/logo_background/man_2.png"
+            src="~assets/image/logo_background/man_2.webp"
             alt=""
           />
           <img
             id="top-background-image-man-2-mask"
-            src="~assets/image/logo_background/man_2_mask.png"
+            src="~assets/image/logo_background/man_2_mask.webp"
             alt=""
           />
-          <img id="top-logo-image" src="~assets/image/logo_black.png" alt="" />
+          <img id="top-logo-image" src="~assets/image/logo_black.webp" alt="" />
         </div>
       </div>
     </div>

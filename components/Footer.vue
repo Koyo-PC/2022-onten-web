@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <img id="footer-logo" src="~assets/image/logo_black.png" alt="" />
+    <img id="footer-logo" src="~assets/image/logo_black.webp" alt="" />
     <div id="footer-title">第75回 音楽と展覧の会 &quot;宴Joy&quot;</div>
     <div id="sns-link">
       <a class="sns-link-button" href="https://twitter.com/koyo_onten2022"

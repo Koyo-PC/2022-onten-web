@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img id="circle_logo" :src="`/img/circle/${name}/logo.png`" alt="" />
+    <img id="circle_logo" :src="`/img/circle/${name}/logo.webp`" alt="" />
     <h1 id="circle_title">{{ circles[name].name }}</h1>
   </div>
 </template>

@@ -2,7 +2,7 @@
   <a :href="`/circle/${name}`">
     <div class="circle-tile">
       <img
-        :src="`/img/circle/${name}/logo.png`"
+        :src="`/img/circle/${name}/logo.webp`"
         :alt="`${circles[name].name}ロゴ`"
       />
       <h1>{{ circles[name].name }}</h1>

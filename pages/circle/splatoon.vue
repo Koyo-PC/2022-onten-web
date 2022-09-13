@@ -10,7 +10,7 @@
     </p>
     <img
       class="spla-head-img"
-      src="/img/circle/splatoon/head_image.png"
+      src="/img/circle/splatoon/head_image.webp"
       alt=""
     />
   </div>
