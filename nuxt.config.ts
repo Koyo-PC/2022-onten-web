@@ -75,7 +75,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           additionalData:
-            '@import "@/assets/style/colors.scss"; @import "@/assets/style/responsive.scss";',
+            '@use "sass:math"; @import "@/assets/style/colors.scss"; @import "@/assets/style/responsive.scss";',
         },
       },
     },

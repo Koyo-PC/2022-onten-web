@@ -49,6 +49,18 @@
         {{ date_counter_content() }}
       </div>
     </div>
+    <div id="message">
+      <h2>あいさつ</h2>
+      <p>
+        2年前、僕らが主役を務めた中学校の音展はコロナ1年目であり、開催自体が危ぶまれた音展でした。
+        「誰も来ないなら音展なんていらないじゃないか!」そんな声に何度心を痛めたことでしょう。
+        しかし今年は音展委員や先生方の尽力により3年振りに「開かれた音展」が実現しました!
+        その高揚感が今年のテーマ「宴 joy」にも溢れ出しています。
+        今年の音展が、画面の前の皆さん1人1人にとって「音楽と展覧」などという堅苦しい枠を超えた、
+        楽しく有意義で感動的な「宴」になることを願ってやみません。
+        <span class="writer">生徒会長 佐田 一真</span>
+      </p>
+    </div>
     <div id="ticket">
       <h1>＜＜ 重要なお知らせ ＞＞</h1>
       <p>
@@ -336,6 +348,26 @@ onMounted(() => {
       transform: translateY(-50%);
       filter: invert(100%) drop-shadow(0 0 10px $back-color-secondary);
     }
+  }
+}
+#message {
+  p {
+    width: 60%;
+    margin: 0 auto;
+    .writer {
+      display: block;
+      font-size: 1.5rem;
+      float: right;
+      margin: 10px;
+    }
+    //.writer::before {
+    //  content: "";
+    //  display: inline-block;
+    //  width: 2em;
+    //  height: calc(0.8em / 2 - 0.5px);
+    //  border-top: 1px solid #000;
+    //  margin: 0 3px;
+    //}
   }
 }
 #info {
