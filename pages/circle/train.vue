@@ -69,6 +69,9 @@ const images = [
   "1662499694058.webp",
   "DIAGONAL_0001_BURST20220823131655495_COVER.webp",
   "DSC_0528.webp",
+  "FVnL_5zaQAAnimJ.webp",
+  "37e64350-e6da-417a-9841-5f8f60a165c7.webp",
+  "3214a562-f9b4-4fbe-b345-c841508076ba_.webp",
 ];
 </script>
 <script lang="ts">
