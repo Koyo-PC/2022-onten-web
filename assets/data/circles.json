@@ -96,6 +96,7 @@
   },
   "geography": {
     "name": "地歴部",
+    "description": "ち球を救うために\nれきしを学び\nき持ちを高め\nぶつける",
     "room": ["3D"]
   },
   "picture": {
