@@ -1,6 +1,7 @@
 export interface Circle {
   name: string;
-  description: string | undefined;
+  description?: string;
+  room?: string[];
 }
 
 declare const value: Record<string, Circle>;
