@@ -4,6 +4,14 @@
     "url": "/"
   },
   {
+    "name": "Message",
+    "url": "/message"
+  },
+  {
+    "name": "Access",
+    "url": "/access"
+  },
+  {
     "name": "Map",
     "url": "/map"
   },
