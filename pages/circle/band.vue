@@ -10,7 +10,7 @@
       <li>
         <span class="band-name">セントラルドグマ</span>
         We are the rock.<br />
-        (Vo. ユータン Gt. 宮田 Ba. もやし Dr. ダンボ key. Catherine)
+        (Ba. 津坂拓輝 Dr. 山田真輝 Key. 福本開 Vo. 藤本悠辰 Gt. 宮田瑛太)
       </li>
       <li>
         <span class="band-name">The philosopher`s stones</span>
