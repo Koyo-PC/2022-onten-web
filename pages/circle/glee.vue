@@ -9,8 +9,8 @@
     <p>場所: 講堂 開演:</p>
     <h2>～演目～</h2>
     <ul>
-      <li>こころようたえ</li>
       <li>Bohemian Rhapsody</li>
+      <li>こころようたえ</li>
       <li>なんでもないや</li>
     </ul>
   </div>
