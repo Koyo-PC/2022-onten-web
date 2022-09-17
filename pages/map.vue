@@ -11,6 +11,7 @@
           <div id="booth_container">
             <MapBooth
               v-for="(rooms, name) in getBoothList(currentFloor)"
+              :id="`room_${rooms.join('_')}`"
               :key="name"
               :circle="name"
               :rooms="rooms"
@@ -38,7 +39,15 @@
 </template>
 
 <script setup lang="ts">
-import { definePageMeta, ref, useHead, useRoute, useRouter } from "#imports";
+import {
+  definePageMeta,
+  nextTick,
+  ref,
+  useHead,
+  useRoute,
+  useRouter,
+  watch,
+} from "#imports";
 import circles, { Circle } from "assets/data/circles.json";
 import room, { Room } from "assets/data/room.json";
 import { gsap } from "gsap";
@@ -120,7 +129,23 @@ const onButtonLeave = (floor: number) => {
   });
 };
 
-// changeFloor(1);
+const lightRoom = (name: string) => {
+  if (name) {
+    currentFloor.value = room[name as string].floor;
+  }
+  nextTick(() => {
+    for (const elem of document.getElementsByClassName("light")) {
+      elem.classList.remove("light");
+    }
+    document.getElementById(`room_${name}`)?.classList.add("light");
+  });
+};
+
+watch(
+  () => useRoute().query.room,
+  (name) => lightRoom(name as string)
+);
+lightRoom(useRoute().query.room?.toString() ?? "");
 </script>
 <style lang="scss" scoped>
 #map {

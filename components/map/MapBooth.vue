@@ -70,6 +70,9 @@ export default {
   display: grid;
   place-content: center;
   color: #e2e2e2;
+  &.light {
+    background-color: #4008;
+  }
   div {
     text-align: center;
   }
