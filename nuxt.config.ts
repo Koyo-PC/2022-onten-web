@@ -15,8 +15,8 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: "宴Joy",
-      titleTemplate: "宴Joy | %s",
+      title: "宴Joy - 音展2022",
+      titleTemplate: "宴Joy - 音展2022 | %s",
 
       htmlAttrs: {
         lang: "ja",
