@@ -29,7 +29,17 @@
               ]"
               :key="t"
               :style="{ top: t * borderrate * zoomrate + 'px' }"
-            ></div>
+            >
+              <span
+                style="float: left"
+                v-text="getTimeStr(startTime + t * borderrate)"
+              ></span
+              ><span v-text="getTimeStr(startTime + t * borderrate)"></span
+              ><span
+                style="float: right"
+                v-text="getTimeStr(startTime + t * borderrate)"
+              ></span>
+            </div>
           </div>
           <div id="events-container">
             <div
@@ -83,7 +93,7 @@ definePageMeta({
 });
 
 const zoomrate = 5;
-const borderrate = 15;
+const borderrate = 30;
 
 const getTime = (strTime: string) => {
   const [hour, minute] = strTime.split(":");
@@ -91,68 +101,13 @@ const getTime = (strTime: string) => {
 };
 const startTime = getTime("9:00");
 const endTime = getTime("15:30");
+const getTimeStr = (time: number) => {
+  const hour = Math.floor(time / 60);
+  const minute = time % 60;
+  return `${hour}:${String(minute).padStart(2, "0")}`;
+};
 </script>
 <style lang="scss" scoped>
-/*
-#timeline {
-  position: relative;
-  div {
-    position: relative;
-    #timeline-line-container {
-      position: absolute;
-      top: 200px;
-      left: 0;
-      width: 100%;
-      .timeline-line {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: black;
-        line-height: 20px;
-      }
-    }
-    #timeline-scroll-x {
-      position: relative;
-      overflow-x: scroll;
-      //overflow-y: visible;
-      top: 100px;
-      width: 100%;
-      height: 60vh;
-      #timeline-event-name-container {
-        display: flex;
-        text-align: center;
-        h1 {
-          display: block;
-          min-width: 200px;
-          font-size: 1.25rem;
-          z-index: 1000000000000;
-        }
-      }
-      #timeline-container {
-        overflow-y: scroll;
-        .event-timeline {
-          position: relative;
-          display: flex;
-          margin-top: 100px;
-          min-width: 200px;
-
-          .timeline-event-note {
-            position: absolute;
-            left: 25%;
-            width: 50%;
-            background-color: #00dc82;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-      }
-    }
-  }
-}
- */
 #scroll-x {
   display: inline-block;
   width: 100%;

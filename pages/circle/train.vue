@@ -20,7 +20,7 @@
         <img
           v-for="i in Math.ceil(images.length / 2)"
           :key="i"
-          :src="`/img/circle/train/${images[2 * i]}`"
+          :src="`/img/circle/train/${images[2 * (i - 1)]}`"
           alt=""
         />
       </div>
@@ -28,7 +28,7 @@
         <img
           v-for="i in Math.floor(images.length / 2)"
           :key="i"
-          :src="`/img/circle/train/${images[2 * i + 1]}`"
+          :src="`/img/circle/train/${images[2 * (i - 1) + 1]}`"
           alt=""
         />
       </div>
@@ -53,7 +53,6 @@ definePageMeta({
 });
 
 const images = [
-  "1662499694522.webp",
   "1662499694590.webp",
   "1662721512803.webp",
   "1662624359000.webp",
