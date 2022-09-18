@@ -4,7 +4,7 @@
     <p>
       今年は講堂でライブ映像の放映、そして3年ぶりの生演奏を行います！熱い音楽を見逃すな！ぜひ講堂へお越しください！<br />
     </p>
-    <p><a href="https://www.instagram.com/koyo.keion">公式Instagram</a></p>
+    <Instagram id="koyo.keion" />
     <h2>【バンド紹介】</h2>
     <ul id="band-list">
       <li>
@@ -49,6 +49,7 @@
 <script setup lang="ts">
 import { definePageMeta, useHead } from "#imports";
 import circles from "assets/data/circles.json";
+import Instagram from "~/components/sns/Instagram.vue";
 useHead({
   title: circles["band"].name,
   meta: [
