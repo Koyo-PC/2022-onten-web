@@ -5,7 +5,9 @@
       <div id="scroll-x">
         <div id="event-name-container">
           <h1
-            :style="{ width: 100.0 / Object.keys(events).length + '%' }"
+            :style="{
+              width: `calc((100% - 60px) / ${Object.keys(events).length})`,
+            }"
             v-for="(event, name) of events"
             :key="name"
           >
@@ -14,7 +16,7 @@
         </div>
         <div
           id="scroll-y"
-          :style="{ minWidth: 200 * Object.keys(events).length + 'px' }"
+          :style="{ minWidth: 200 * Object.keys(events).length + 60 + 'px' }"
         >
           <div
             id="line-container"
@@ -45,7 +47,7 @@
             <div
               class="event-timeline"
               :style="{
-                width: 100.0 / Object.keys(events).length + '%',
+                width: `calc((100% - 60px) / ${Object.keys(events).length})`,
                 height: (endTime - startTime) * zoomrate + 'px',
               }"
               v-for="(event, name) of events"
@@ -53,18 +55,23 @@
             >
               <div
                 class="timeline-event-note"
-                v-for="data of event"
+                v-for="data of event.events"
                 :key="data.name"
                 :style="{
                   top: (getTime(data.time[0]) - startTime) * zoomrate + 'px',
                   height:
-                    (getTime(data.time[1]) - getTime(data.time[0])) * zoomrate +
+                    (getTime(data.time[1]) - getTime(data.time[0])) * zoomrate -
+                    1 +
                     'px',
                 }"
               >
                 <span class="event-note-start">{{ data.time[0] }}〜</span>
                 <span class="event-note-title">{{ data.name }}</span>
                 <span class="event-note-end">〜{{ data.time[1] }}</span>
+                <a
+                  v-if="event.circle !== undefined"
+                  :href="`/circle/${event.circle}`"
+                ></a>
               </div>
             </div>
           </div>
@@ -120,6 +127,12 @@ const getTimeStr = (time: number) => {
       display: block;
       min-width: 200px;
       font-size: 1.25rem;
+      &:first-child {
+        margin-left: 30px;
+      }
+      &:last-child {
+        margin-right: 30px;
+      }
     }
   }
   #scroll-y {
@@ -147,8 +160,8 @@ const getTimeStr = (time: number) => {
     #events-container {
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
+      left: 30px;
+      right: 30px;
       display: flex;
       .event-timeline {
         position: relative;
@@ -156,8 +169,8 @@ const getTimeStr = (time: number) => {
 
         .timeline-event-note {
           position: absolute;
-          left: 25%;
-          width: 50%;
+          left: 5%;
+          width: 90%;
           padding: 5px;
           background-color: #00dc82cc;
           display: flex;
@@ -178,6 +191,13 @@ const getTimeStr = (time: number) => {
             right: 0;
             padding: 5px;
             font-size: 0.75rem;
+          }
+          a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
           }
         }
       }

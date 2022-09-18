@@ -30,7 +30,8 @@ a {
   color: inherit;
   text-decoration: none;
   .circle-tile {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     border-radius: 10px;
     margin: 10px;
     padding: 10px;

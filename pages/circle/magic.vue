@@ -7,13 +7,7 @@
       日常生活に刺激が足りないそこのあなた！9人の甲陽生マジシャンによる不思議な世界にぜひお越しください！！
     </p>
     <p>
-      <a class="insta-link" href="https://www.instagram.com/koyo.magic/"
-        ><img
-          class="insta-image"
-          src="~assets/image/sns/instagram.svg"
-          alt="Instagram icon"
-        /><span class="insta-link-text">koyo.magic</span></a
-      >
+      <Instagram id="koyo.magic" />
       甲陽奇術同好会公式アカウントです！
       音展の最新情報はもちろん、日頃の活動の様子なども投稿してるので是非ご覧ください！
     </p>
@@ -22,6 +16,7 @@
 <script setup lang="ts">
 import { definePageMeta, useHead } from "#imports";
 import circles from "assets/data/circles.json";
+import Instagram from "~/components/sns/Instagram.vue";
 useHead({
   title: circles["magic"].name,
   meta: [
@@ -45,24 +40,5 @@ export default {
 <style lang="scss" scoped>
 p {
   margin: 50px 0;
-}
-.insta-link {
-  width: 180px;
-  height: 90px;
-  margin: 20px auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  color: inherit;
-  text-decoration: none;
-  .insta-image {
-    display: block;
-    height: calc(100% - 24px);
-    padding: 5px;
-    filter: invert(100%);
-  }
-  .insta-link-text {
-    font-size: 20px;
-  }
 }
 </style>

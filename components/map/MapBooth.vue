@@ -79,7 +79,7 @@ export default {
   .map_link_name {
     //white-space: pre-wrap;
     line-height: 1.2;
-    font-size: 0.75vw;
+    font-size: 10px;
     word-wrap: break-word;
   }
   .map_link_room {

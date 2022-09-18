@@ -40,7 +40,8 @@ footer {
 
   #footer-logo {
     display: block;
-    height: 200px;
+    max-width: 100%;
+    max-height: 200px;
     margin: 0 auto;
     filter: invert(100%);
   }

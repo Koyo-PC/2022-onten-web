@@ -42,6 +42,7 @@
 import {
   definePageMeta,
   nextTick,
+  onMounted,
   ref,
   useHead,
   useRoute,
@@ -51,6 +52,7 @@ import {
 import circles, { Circle } from "assets/data/circles.json";
 import room, { Room } from "assets/data/room.json";
 import { gsap } from "gsap";
+import { onBeforeRouteUpdate } from "vue-router";
 
 const floors = [...Array(5)].map((_, i) => `/img/map/${i + 1}.webp`);
 
@@ -108,7 +110,7 @@ const getBoothList = (floor: number): Record<string, string[]> => {
 const changeFloor = (floor: number) => {
   // useRoute().query.floor = floor.toString();
   useRouter().push({
-    query: { floor: floor.toString() },
+    query: { floor: floor.toString(), room: useRoute().query.room?.toString() },
   });
   currentFloor.value = floor;
 };
@@ -129,8 +131,8 @@ const onButtonLeave = (floor: number) => {
   });
 };
 
-const lightRoom = (name: string) => {
-  if (name) {
+const lightRoom = (name: string, force = false) => {
+  if (force && name) {
     currentFloor.value = room[name as string].floor;
   }
   nextTick(() => {
@@ -143,9 +145,16 @@ const lightRoom = (name: string) => {
 
 watch(
   () => useRoute().query.room,
-  (name) => lightRoom(name as string)
+  (name) => lightRoom(name?.toString() ?? "")
 );
-lightRoom(useRoute().query.room?.toString() ?? "");
+
+onMounted(() => {
+  lightRoom(useRoute().query.room?.toString() ?? "", true);
+  useRouter().afterEach((to) => {
+    lightRoom(to.query.room?.toString() ?? "");
+  });
+});
+// lightRoom(useRoute().query.room?.toString() ?? "");
 </script>
 <style lang="scss" scoped>
 #map {
@@ -156,7 +165,7 @@ lightRoom(useRoute().query.room?.toString() ?? "");
   //height: 100vh;
   padding: 20px;
   &_scroll {
-    overflow: scroll;
+    overflow: auto;
     #map_image {
       position: relative;
       width: 100%;
@@ -186,6 +195,9 @@ lightRoom(useRoute().query.room?.toString() ?? "");
       height: 100%;
       border: 1px solid $main-color;
       text-align: center;
+      @include mobile {
+        font-size: 0.8rem;
+      }
       &.selected {
         background-color: #000000 !important;
         color: #fff;

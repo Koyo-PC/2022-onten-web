@@ -2,20 +2,41 @@
   <div>
     <div id="tools-menu">
       <div id="search-menu">
-        <label for="search"
-          >検索 <input type="text" v-model="searchText" id="search"
-        /></label>
+        <label for="search">検索</label
+        ><input type="text" v-model="searchText" id="search" />
       </div>
       <div id="filter-menu">
-        <label for="filter"
-          >絞り込み
-          <select name="kind" id="filter" v-model="searchCategory" multiple>
-            <option value="admin">本部企画</option>
-            <option value="club">部活動</option>
-            <option value="party">同好会</option>
-            <option value="class">クラス企画</option>
-          </select></label
-        >
+        <label for="filter">絞り込み</label>
+        <span id="filter">
+          <input
+            type="checkbox"
+            id="filter-admin"
+            value="admin"
+            v-model="searchCategory"
+          />
+          <label for="filter-class">音展企画</label><br />
+          <input
+            type="checkbox"
+            id="filter-club"
+            value="club"
+            v-model="searchCategory"
+          />
+          <label for="filter-club">部活動</label><br />
+          <input
+            type="checkbox"
+            id="filter-party"
+            value="party"
+            v-model="searchCategory"
+          />
+          <label for="filter-party">同好会</label><br />
+          <input
+            type="checkbox"
+            id="filter-class"
+            value="class"
+            v-model="searchCategory"
+          />
+          <label for="filter-class">クラス企画</label>
+        </span>
       </div>
     </div>
     <div id="tiles">
@@ -53,6 +74,7 @@ useHead({
 definePageMeta({
   layout: "simple-page",
 });
+console.log(circles);
 
 const searchText = ref("");
 const searchCategory = ref(["admin", "club", "party", "class"]);
@@ -61,23 +83,23 @@ const searchCategory = ref(["admin", "club", "party", "class"]);
 <style lang="scss" scoped>
 #tools-menu {
   display: flex;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   div {
-    vertical-align: middle;
+    display: flex;
+    padding: 5px 1rem;
+    align-items: center;
     label {
       margin: 0 0.5rem;
       padding: 0;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       white-space: nowrap;
     }
   }
   #search-menu {
-    display: flex;
-    width: 100%;
-    padding: 0 1rem;
     #search {
       flex: 1;
       margin: 0;
@@ -88,8 +110,6 @@ const searchCategory = ref(["admin", "club", "party", "class"]);
     }
   }
   #filter-menu {
-    display: flex;
-    padding: 0 1rem;
     #filter {
       flex: 1;
       margin: 0;
@@ -97,6 +117,9 @@ const searchCategory = ref(["admin", "club", "party", "class"]);
       border: 1px solid #ccc;
       border-radius: 0.25rem 0 0 0.25rem;
       font-size: 1rem;
+      label {
+        font-size: 1rem;
+      }
     }
   }
 }
