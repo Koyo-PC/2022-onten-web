@@ -173,14 +173,42 @@
       }
     ]
   },
-  "ラジオ": {
-    "circle": "radio",
+  "ESS": {
+    "circle": "ess",
     "events": [
       {
-        "name": "KOYOラジオ",
+        "name": "Opening",
         "time": [
-          "10:00",
-          "12:00"
+          "11:00",
+          "11:05"
+        ]
+      },
+      {
+        "name": "Debate part1",
+        "time": [
+          "11:05",
+          "11:15"
+        ]
+      },
+      {
+        "name": "Debate part2",
+        "time": [
+          "11:20",
+          "11:45"
+        ]
+      },
+      {
+        "name": "Speech",
+        "time": [
+          "11:50",
+          "11:55"
+        ]
+      },
+      {
+        "name": "Ending",
+        "time": [
+          "12:00",
+          "12:05"
         ]
       }
     ]

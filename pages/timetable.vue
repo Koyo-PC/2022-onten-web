@@ -1,5 +1,5 @@
 <template>
-  <div id="timeline">
+  <div id="timetable">
     <h1>タイムライン</h1>
     <div>
       <div id="scroll-x">
@@ -25,7 +25,7 @@
             }"
           >
             <div
-              class="timeline-line"
+              class="timetable-line"
               v-for="t of [
                 ...Array(Math.floor((endTime - startTime) / borderrate)).keys(),
               ]"
@@ -45,16 +45,16 @@
           </div>
           <div id="events-container">
             <div
-              class="event-timeline"
+              class="event-timetable"
               :style="{
-                width: `calc((100% - 60px) / ${Object.keys(events).length})`,
+                width: `${100.0 / Object.keys(events).length}%`,
                 height: (endTime - startTime) * zoomrate + 'px',
               }"
               v-for="(event, name) of events"
               :key="name"
             >
               <div
-                class="timeline-event-note"
+                class="timetable-event-note"
                 v-for="data of event.events"
                 :key="data.name"
                 :style="{
@@ -86,12 +86,12 @@ import { definePageMeta, useHead } from "#imports";
 import events from "../assets/data/events.json";
 
 useHead({
-  title: "タイムライン",
+  title: "タイムテーブル",
   meta: [
     {
       hid: "og:title",
       property: "og:title",
-      content: "宴Joy | タイムライン",
+      content: "宴Joy | タイムテーブル",
     },
   ],
 });
@@ -148,7 +148,7 @@ const getTimeStr = (time: number) => {
       //top: 0;
       //left: 0;
       width: 100%;
-      .timeline-line {
+      .timetable-line {
         position: absolute;
         left: 0;
         width: 100%;
@@ -164,11 +164,11 @@ const getTimeStr = (time: number) => {
       left: 30px;
       right: 30px;
       display: flex;
-      .event-timeline {
+      .event-timetable {
         position: relative;
         min-width: 200px;
 
-        .timeline-event-note {
+        .timetable-event-note {
           position: absolute;
           left: 5%;
           width: 90%;

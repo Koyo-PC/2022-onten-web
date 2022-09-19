@@ -13,6 +13,8 @@
     <p class="indent">
       同じメンバーで演奏していても、講堂とルームコンサートでは全く違った顔を見せます。是非、僕たちの音楽を聴きに来て下さい！！
     </p>
+    <h2>部誌</h2>
+    <PDF src="/files/ensemble.pdf" />
   </div>
 </template>
 <script setup lang="ts">
@@ -32,10 +34,9 @@ definePageMeta({
   layout: "simple-page",
 });
 </script>
-<script lang="ts">
-export default {
-  name: "ensemble",
-};
-</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+h2 {
+  text-align: center;
+}
+</style>
