@@ -10,16 +10,7 @@
     </p>
     <div id="menu">
       <h2>メニュー</h2>
-      <div class="pdf">
-        <embed
-          id="menu-content"
-          src="/files/cafe.pdf#toolbar=0&navpanes=0&scrollbar=0"
-          type="application/pdf"
-          top-toolbar-height="0"
-          frameBorder="0"
-        />
-        <a href="/files/cafe.pdf"></a>
-      </div>
+      <PDF src="/files/cafe.pdf" />
     </div>
   </div>
 </template>
@@ -50,25 +41,6 @@ export default {
 #menu {
   h2 {
     text-align: center;
-  }
-  .pdf {
-    position: relative;
-    height: 60vh;
-    aspect-ratio: calc(1 / math.sqrt(2));
-    margin: 0 auto;
-    #menu-content {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    a {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
   }
 }
 </style>
