@@ -32,11 +32,16 @@
       >に、いくつかWebで遊べるミニゲームを用意しています。<br />
       短時間の暇つぶしにはちょうどいいかも!?
     </p>
+    <p>
+      <b>公式Twitterのフォローもお願いします!</b>
+    </p>
+    <Twitter id="koyo_pc" />
   </div>
 </template>
 <script setup lang="ts">
 import { definePageMeta, useHead } from "#imports";
 import circles from "assets/data/circles.json";
+import Twitter from "~/components/sns/Twitter.vue";
 
 useHead({
   title: circles["pc"].name,
