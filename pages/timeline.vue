@@ -8,7 +8,7 @@
             :style="{
               width: `calc((100% - 60px) / ${Object.keys(events).length})`,
             }"
-            v-for="(event, name) of events"
+            v-for="name of Object.keys(events)"
             :key="name"
           >
             {{ name }}
@@ -58,7 +58,8 @@
                 v-for="data of event.events"
                 :key="data.name"
                 :style="{
-                  top: (getTime(data.time[0]) - startTime) * zoomrate + 'px',
+                  top:
+                    (getTime(data.time[0]) - startTime) * zoomrate + 1 + 'px',
                   height:
                     (getTime(data.time[1]) - getTime(data.time[0])) * zoomrate -
                     1 +
