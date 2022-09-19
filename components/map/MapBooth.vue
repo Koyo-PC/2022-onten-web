@@ -1,30 +1,56 @@
 <template>
   <div
     class="map_link_cover"
-    :style="getMapCoverStyle(rooms)"
-    @click="clickBooth(circle)"
+    :style="getMapCoverStyle(room, circles)"
+    @click="clickBooth(circles)"
   >
-    <div class="map_link_room">{{ rooms.join(",") }}</div>
-    <div class="map_link_name" v-html="circle"></div>
+    <div class="map_link_room" :style="getRoomNameStyle(room, circles)">
+      {{ room }}
+    </div>
+    <div
+      v-if="isVisible(room, circles)"
+      class="map_link_name"
+      v-html="circles.map((c) => c.name).join(', ')"
+    ></div>
   </div>
 </template>
 
 <script setup lang="ts">
 import roomList, { Room } from "assets/data/room.json";
+import { Circle } from "assets/data/circles.json";
 
-const getMapCoverStyle = (rooms: string[]) => {
-  const begin = rooms
-    .map((s) => roomList[s])
+const getMapCoverStyle = (room: string, circles: Circle[]) => {
+  const defaultCircle = circles[0];
+  const defaultRoom = defaultCircle.room?.[0];
+  if (defaultRoom == undefined) return;
+
+  if (!circles.some((circle) => circle.room?.[0] === room)) {
+    const begin = roomList[room].loc[0];
+    const end = roomList[room].loc[1];
+    const building = roomList[defaultRoom]["building"];
+    const spread = roomList[defaultRoom]["spread"] ?? false;
+    return {
+      top: building === 0 ? 0 : null,
+      bottom: building === 1 ? (spread ? "0" : "5%") : null,
+      left: `${begin * (100.0 / 17)}%`,
+      width: `${(end - begin) * (100.0 / 17)}%`,
+      height: spread ? "21%" : "16%",
+      backgroundColor: "transparent",
+    };
+  }
+
+  const begin = defaultCircle.room
+    ?.map((s) => roomList[s])
     .reduce((room_a, room_b) =>
       room_a.loc[0] < room_b.loc[0] ? room_a : room_b
     ).loc[0];
-  const end = rooms
-    .map((s) => roomList[s])
+  const end = defaultCircle.room
+    ?.map((s) => roomList[s])
     .reduce((room_a, room_b) =>
       room_a.loc[1] > room_b.loc[1] ? room_a : room_b
     ).loc[1];
-  const building = roomList[rooms[0]]["building"];
-  const spread = roomList[rooms[0]]["spread"] ?? false;
+  const building = roomList[defaultRoom]["building"];
+  const spread = roomList[defaultRoom]["spread"] ?? false;
   // if (this.isLandscape) {
   return {
     top: building === 0 ? 0 : null,
@@ -33,15 +59,34 @@ const getMapCoverStyle = (rooms: string[]) => {
     width: `${(end - begin) * (100.0 / 17)}%`,
     height: spread ? "21%" : "16%",
   };
-  // } else {
-  // return {
-  //   right: building === 0 ? "0" : null,
-  //   left: building === 1 ? (spread ? "0" : "4.6%") : null,
-  //   top: `${begin * (100.0 / 17)}%`,
-  //   height: `${(end - begin) * (100.0 / 17)}%`,
-  //   width: spread ? "21%" : "16.25%",
-  // };
-  // }
+};
+const getRoomNameStyle = (room: string, circles: Circle[]) => {
+  const defaultCircle = circles[0];
+  const defaultRoom = defaultCircle.room?.[0];
+  if (defaultRoom == undefined) return;
+
+  const circle_begin = defaultCircle.room
+    ?.map((s) => roomList[s])
+    .reduce((room_a, room_b) =>
+      room_a.loc[0] < room_b.loc[0] ? room_a : room_b
+    ).loc[0];
+  const circle_end = defaultCircle.room
+    ?.map((s) => roomList[s])
+    .reduce((room_a, room_b) =>
+      room_a.loc[1] > room_b.loc[1] ? room_a : room_b
+    ).loc[1];
+  const circle_length = circle_end - circle_begin;
+  const room_begin = roomList[room].loc[0];
+  return {
+    left: `${(room_begin - circle_begin) * (100.0 / circle_length)}%`,
+  };
+};
+const isVisible = (room: string, circles: Circle[]) => {
+  const defaultCircle = circles[0];
+  const defaultRoom = defaultCircle.room?.[0];
+  if (defaultRoom == undefined) return false;
+
+  return circles.some((circle) => circle.room?.[0] === room);
 };
 const clickBooth = (circle: string) => {
   // ポリシーウィンドウ出してdescription書く
@@ -52,7 +97,7 @@ const clickBooth = (circle: string) => {
 </script>
 <script lang="ts">
 export default {
-  props: ["circle", "rooms"],
+  props: ["circles", "room"],
 };
 </script>
 

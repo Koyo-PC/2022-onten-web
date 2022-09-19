@@ -4,7 +4,7 @@
     <h1 class="circle-title">{{ circles[name].name }}</h1>
     <div class="circle-location" v-if="circles[name].room !== undefined">
       <span class="meta-title">開催場所:</span>
-      <span class="meta-loc" v-text="circles[name].room[0]" />
+      <span class="meta-loc" v-text="circles[name].room.join('、')" />
       <a class="meta-button" :href="`/map?room=${circles[name].room[0]}`">
         マップ上で確認</a
       >

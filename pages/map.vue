@@ -10,11 +10,11 @@
           />
           <div id="booth_container">
             <MapBooth
-              v-for="(rooms, name) in getBoothList(currentFloor)"
-              :id="`room_${rooms.join('_')}`"
-              :key="name"
-              :circle="name"
-              :rooms="rooms"
+              v-for="(circles, room) in getBoothList(currentFloor)"
+              :id="`room_${circles.map((c) => c.name).join('_')}`"
+              :key="room"
+              :circles="circles"
+              :room="room"
             />
           </div>
         </div>
@@ -53,6 +53,7 @@ import circles, { Circle } from "assets/data/circles.json";
 import room, { Room } from "assets/data/room.json";
 import { gsap } from "gsap";
 import { onBeforeRouteUpdate } from "vue-router";
+import { List } from "immutable";
 
 const floors = [...Array(5)].map((_, i) => `/img/map/${i + 1}.webp`);
 
@@ -74,37 +75,50 @@ definePageMeta({
 
 const currentFloor = ref(parseInt(useRoute().query.floor?.toString() ?? "1"));
 
-const getBoothList = (floor: number): Record<string, string[]> => {
+const getBoothList = (floor: number): Record<string, Circle[]> => {
   const currentFloorCircles = Object.values(circles).filter(
     (c: Circle) =>
       c.room != undefined && room[c.room[0]].floor === currentFloor.value
   );
-  const roomCircleMap: Record<string, string[]> = {};
+  const currentFloorRooms = Object.keys(room).filter(
+    (n) => room[n].floor === currentFloor.value
+  );
+  // const roomCircleMap: Record<string, string[]> = {};
+  // currentFloorCircles.forEach((c: Circle) => {
+  //   if (c.room != undefined) {
+  //     if ((roomCircleMap[c.room[0]]?.length ?? 0) < 1) {
+  //       roomCircleMap[c.room[0]] = [c.name];
+  //     } else {
+  //       roomCircleMap[c.room[0]].push(c.name);
+  //     }
+  //   }
+  // });
+
+  // circleMap : <roomname : CircleName[]>
+  const circleMap: Record<string, Circle[]> = {};
+
+  currentFloorRooms.forEach((n) => (circleMap[n] = []));
+
+  // Object.keys(roomCircleMap).forEach((r: string) => {
+  //   if (roomCircleMap[r].length > 0) {
+  //     const cs = roomCircleMap[r].map(
+  //       (c: string) => `<span style="display: inline-block;">${c}</span>`
+  //     );
+  //     if (circleRoomsMap[cs.join(", ")] == undefined) {
+  //       circleRoomsMap[cs.join(", ")] = [r];
+  //     } else {
+  //       circleRoomsMap[cs.join(", ")]?.push(r);
+  //     }
+  //   }
+  // });
+
   currentFloorCircles.forEach((c: Circle) => {
-    if (c.room != undefined) {
-      if ((roomCircleMap[c.room[0]]?.length ?? 0) < 1) {
-        roomCircleMap[c.room[0]] = [c.name];
-      } else {
-        roomCircleMap[c.room[0]].push(c.name);
-      }
-    }
+    c.room?.forEach((r: string) => {
+      circleMap[r].push(c);
+    });
   });
 
-  const circleRoomsMap: Record<string, string[]> = {};
-
-  Object.keys(roomCircleMap).forEach((r: string) => {
-    if (roomCircleMap[r].length > 0) {
-      const cs = roomCircleMap[r].map(
-        (c: string) => `<span style="display: inline-block;">${c}</span>`
-      );
-      if (circleRoomsMap[cs.join(", ")] == undefined) {
-        circleRoomsMap[cs.join(", ")] = [r];
-      } else {
-        circleRoomsMap[cs.join(", ")]?.push(r);
-      }
-    }
-  });
-  return circleRoomsMap;
+  return circleMap;
 };
 
 const changeFloor = (floor: number) => {
