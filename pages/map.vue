@@ -10,8 +10,8 @@
           />
           <div id="booth_container">
             <MapBooth
-              v-for="(circles, room) in getBoothList(currentFloor)"
-              :id="`room_${circles.map((c) => c.name).join('_')}`"
+              v-for="(circles, room) in getBoothList()"
+              :class="circles.map((c) => `room_${c.name}`)"
               :key="room"
               :circles="circles"
               :room="room"
@@ -50,10 +50,8 @@ import {
   watch,
 } from "#imports";
 import circles, { Circle } from "assets/data/circles.json";
-import room, { Room } from "assets/data/room.json";
+import room from "assets/data/room.json";
 import { gsap } from "gsap";
-import { onBeforeRouteUpdate } from "vue-router";
-import { List } from "immutable";
 
 const floors = [...Array(5)].map((_, i) => `/img/map/${i + 1}.webp`);
 
@@ -75,7 +73,7 @@ definePageMeta({
 
 const currentFloor = ref(parseInt(useRoute().query.floor?.toString() ?? "1"));
 
-const getBoothList = (floor: number): Record<string, Circle[]> => {
+const getBoothList = (): Record<string, Circle[]> => {
   const currentFloorCircles = Object.values(circles).filter(
     (c: Circle) =>
       c.room != undefined && room[c.room[0]].floor === currentFloor.value
@@ -147,13 +145,16 @@ const onButtonLeave = (floor: number) => {
 
 const lightRoom = (name: string, force = false) => {
   if (force && name) {
-    currentFloor.value = room[name as string].floor;
+    currentFloor.value =
+      room[
+        Object.values(circles).filter((c) => c.name == name)[0].room?.[0] ?? ""
+      ].floor;
   }
   nextTick(() => {
     for (const elem of document.getElementsByClassName("light")) {
       elem.classList.remove("light");
     }
-    document.getElementById(`room_${name}`)?.classList.add("light");
+    document.getElementsByClassName(`room_${name}`)?.[0].classList.add("light");
   });
 };
 
