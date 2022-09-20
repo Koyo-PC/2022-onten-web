@@ -70,8 +70,8 @@
                 <span class="event-note-title">{{ data.name }}</span>
                 <span class="event-note-end">〜{{ data.time[1] }}</span>
                 <a
-                  v-if="event.circle !== undefined"
-                  :href="`/circle/${event.circle}`"
+                  v-if="data.circle !== undefined"
+                  :href="`/circle/${data.circle}`"
                 ></a>
               </div>
             </div>

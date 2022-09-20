@@ -1,215 +1,233 @@
 {
   "中央ステージ": {
-    "circle": "stage",
     "events": [
       {
         "name": "OP",
         "time": [
           "12:30",
           "12:35"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "テスラコイル演奏",
         "time": [
           "12:35",
           "12:50"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "ダンス",
         "time": [
           "13:00",
           "13:05"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "弾き語り",
         "time": [
           "13:10",
           "13:15"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "カラオケ",
         "time": [
           "13:20",
           "13:25"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "漫才",
         "time": [
           "13:30",
           "13:35"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "マジック",
         "time": [
           "13:40",
           "14:20"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "福山和之",
         "time": [
           "14:30",
           "14:37"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "歌",
         "time": [
           "14:40",
           "14:45"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "Ms.コンテスト",
         "time": [
           "14:50",
           "15:20"
-        ]
+        ],
+        "circle": "stage"
       },
       {
         "name": "ED",
         "time": [
           "15:25",
           "15:30"
-        ]
+        ],
+        "circle": "stage"
       }
     ]
   },
-  "音楽会": {
-    "circle": "concert",
+  "講堂": {
     "events": [
       {
         "name": "1年 合唱コンクール",
         "time": [
           "9:15",
           "9:50"
-        ]
+        ],
+        "circle": "concert"
       },
       {
         "name": "1年 個人演奏",
         "time": [
           "9:55",
           "10:20"
-        ]
+        ],
+        "circle": "concert"
       },
       {
         "name": "2年 個人演奏",
         "time": [
           "10:20",
           "10:45"
-        ]
+        ],
+        "circle": "concert"
       },
       {
         "name": "2年 合唱コンクール",
         "time": [
           "10:50",
           "11:25"
-        ]
+        ],
+        "circle": "concert"
       },
       {
         "name": "3年 個人演奏",
         "time": [
           "11:30",
           "12:15"
-        ]
+        ],
+        "circle": "concert"
       },
       {
         "name": "グリー部",
         "time": [
           "12:20",
           "12:45"
-        ]
+        ],
+        "circle": "concert"
       },
       {
         "name": "アンサンブル部",
         "time": [
           "12:50",
           "13:15"
-        ]
-      }
-    ]
-  },
-  "ルームコンサート": {
-    "circle": "ensemble",
-    "events": [
-      {
-        "name": "ルームコンサート",
-        "time": [
-          "13:30",
-          "15:10"
-        ]
-      }
-    ]
-  },
-  "バンド": {
-    "circle": "band",
-    "events": [
+        ],
+        "circle": "concert"
+      },
       {
         "name": "セントラルドグマ",
         "time": [
           "14:20",
           "14:30"
-        ]
+        ],
+        "circle": "band"
       },
       {
         "name": "the philosoher's stones",
         "time": [
           "14:40",
           "14:55"
-        ]
+        ],
+        "circle": "band"
       },
       {
         "name": "the silent picus",
         "time": [
           "15:05",
           "15:20"
-        ]
+        ],
+        "circle": "band"
       }
     ]
   },
-  "ESS": {
-    "circle": "ess",
+  "合併教室": {
+    "events": [
+      {
+        "name": "ルームコンサート",
+        "time": [
+          "13:30",
+          "15:10"
+        ],
+        "circle": "ensemble"
+      }
+    ]
+  },
+  "視聴覚教室": {
     "events": [
       {
         "name": "Opening",
         "time": [
           "11:00",
           "11:05"
-        ]
+        ],
+        "circle": "ess"
       },
       {
         "name": "Debate part1",
         "time": [
           "11:05",
           "11:15"
-        ]
+        ],
+        "circle": "ess"
       },
       {
         "name": "Debate part2",
         "time": [
           "11:20",
           "11:45"
-        ]
+        ],
+        "circle": "ess"
       },
       {
         "name": "Speech",
         "time": [
           "11:50",
           "11:55"
-        ]
+        ],
+        "circle": "ess"
       },
       {
         "name": "Ending",
         "time": [
           "12:00",
           "12:05"
-        ]
+        ],
+        "circle": "ess"
       }
     ]
   }
