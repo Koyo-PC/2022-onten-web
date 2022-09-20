@@ -1,8 +1,16 @@
 {
-  "中央ステージ": {
+  "中央ステージ・中庭": {
     "events": [
       {
-        "name": "OP",
+        "name": "KOYOラジオ(放送)",
+        "time": [
+          "10:00",
+          "12:00"
+        ],
+        "circle": "radio"
+      },
+      {
+        "name": "中央ステージ OP",
         "time": [
           "12:30",
           "12:35"
@@ -82,7 +90,7 @@
         "circle": "stage"
       },
       {
-        "name": "ED",
+        "name": "中央ステージ ED",
         "time": [
           "15:25",
           "15:30"
@@ -190,7 +198,7 @@
   "視聴覚教室": {
     "events": [
       {
-        "name": "Opening",
+        "name": "ESS Opening",
         "time": [
           "11:00",
           "11:05"
@@ -222,7 +230,7 @@
         "circle": "ess"
       },
       {
-        "name": "Ending",
+        "name": "ESS Ending",
         "time": [
           "12:00",
           "12:05"

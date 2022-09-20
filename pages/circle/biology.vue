@@ -109,10 +109,14 @@ h2 {
 
   img {
     display: block;
+    object-fit: contain;
   }
 
   div {
     padding: 10px;
+    @include mobile {
+      padding: 5px;
+    }
   }
 }
 
@@ -134,6 +138,9 @@ h2 {
 #bio-photo-2 {
   img {
     width: 40%;
+    @include mobile {
+      width: 25%;
+    }
   }
 
   div {
@@ -148,12 +155,18 @@ h2 {
     top: 0;
     right: 0;
     width: 40%;
+    @include mobile {
+      width: 25%;
+    }
   }
 
   div {
     position: absolute;
     bottom: 20%;
     right: 40%;
+    @include mobile {
+      right: 25%;
+    }
     width: 20%;
     padding-top: 30px;
   }

@@ -112,5 +112,17 @@
     "building": 1,
     "loc": [15, 17],
     "spread": true
+  },
+  "正門": {
+    "floor": 0,
+    "building": 1,
+    "loc": [17.5, 19.5],
+    "spread": true
+  },
+  "通用門": {
+    "floor": 0,
+    "building": 0,
+    "loc": [-2.5, -0.5],
+    "spread": true
   }
 }
