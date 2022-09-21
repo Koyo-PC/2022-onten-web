@@ -1,6 +1,6 @@
 <template>
   <div id="timetable">
-    <h1>タイムライン</h1>
+    <h1>タイムテーブル</h1>
     <div>
       <div id="scroll-x">
         <div id="event-name-container">
