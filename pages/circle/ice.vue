@@ -14,6 +14,11 @@
     <small
       >新型コロナウイルス感染予防対策のため、かき氷の盛り付けはセルフサービスとなっております。あらかじめご了承ください。</small
     >
+    <img
+      class="poster"
+      src="/img/circle/ice/IMG-2273.webp"
+      alt="かき氷ポスター"
+    />
   </div>
 </template>
 <script setup lang="ts">
@@ -34,4 +39,10 @@ definePageMeta({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.poster {
+  display: block;
+  height: 80vh;
+  margin: 20px auto;
+}
+</style>
