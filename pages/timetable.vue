@@ -186,6 +186,10 @@ const getTimeStr = (time: number) => {
             padding: 5px;
             font-size: 0.75rem;
           }
+          .event-note-title {
+            text-align: center;
+            white-space: pre-wrap;
+          }
           .event-note-end {
             position: absolute;
             bottom: 0;

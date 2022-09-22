@@ -128,6 +128,83 @@
         </li>
       </ul>
     </div>
+    <div id="members">
+      <h2>音展委員</h2>
+      <table>
+        <tr>
+          <td>委員長</td>
+          <td>山本 柊憂</td>
+        </tr>
+        <tr>
+          <td>副委員長</td>
+          <td>玉置 賢吾・甲賀 直人</td>
+        </tr>
+        <tr>
+          <td>顧問</td>
+          <td>釼宝・上島・荒木・吉田</td>
+        </tr>
+        <tr>
+          <td>音楽会</td>
+          <td>奥村</td>
+        </tr>
+        <tr>
+          <td>放送</td>
+          <td>米正</td>
+        </tr>
+        <tr>
+          <td>内規</td>
+          <td>甲賀</td>
+        </tr>
+        <tr>
+          <td>予算・会計</td>
+          <td>佐藤</td>
+        </tr>
+        <tr>
+          <td>備品</td>
+          <td>梅本</td>
+        </tr>
+        <tr>
+          <td>黒本</td>
+          <td>南出</td>
+        </tr>
+        <tr>
+          <td>広報</td>
+          <td>玉置</td>
+        </tr>
+        <tr>
+          <td>パンフレット</td>
+          <td>川添</td>
+        </tr>
+        <tr>
+          <td>装飾</td>
+          <td>早瀬</td>
+        </tr>
+        <tr>
+          <td>VRコースター</td>
+          <td>川添</td>
+        </tr>
+        <tr>
+          <td>中央ステージ</td>
+          <td>橋本</td>
+        </tr>
+        <tr>
+          <td>受付</td>
+          <td>渡邉</td>
+        </tr>
+        <tr>
+          <td>印刷</td>
+          <td>紺谷</td>
+        </tr>
+        <tr>
+          <td>金券</td>
+          <td>玉置</td>
+        </tr>
+        <tr>
+          <td>キャップアート</td>
+          <td>宮崎</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -407,6 +484,18 @@ h2 {
         li {
           margin-bottom: 10px;
         }
+      }
+    }
+  }
+}
+#members {
+  text-align: center;
+  table {
+    display: inline-block;
+    text-align: left;
+    tr {
+      td {
+        padding: 10px;
       }
     }
   }
