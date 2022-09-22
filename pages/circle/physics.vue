@@ -5,6 +5,8 @@
       「いかにして」ということに関する困難な問いから逃れるために、「神」を持ち出すのは、間違いなく知的な怠惰に過ぎない。<br />
       ―ローレンス・クラウス（理論物理学者）
     </p>
+    <h2>公式Twitter</h2>
+    <Twitter id="koyophysics" />
     <div id="doc">
       <h2>2022年度 部誌</h2>
       <PDF src="/files/physics.pdf" />
@@ -14,6 +16,7 @@
 <script setup lang="ts">
 import { definePageMeta, useHead } from "#imports";
 import circles from "assets/data/circles.json";
+import Twitter from "~/components/sns/Twitter.vue";
 
 useHead({
   title: circles["physics"].name,
