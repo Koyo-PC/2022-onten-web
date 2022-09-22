@@ -11,6 +11,13 @@
       甲陽奇術同好会公式アカウントです！
       音展の最新情報はもちろん、日頃の活動の様子なども投稿してるので是非ご覧ください！
     </p>
+    <p>
+      <img
+        class="poster"
+        alt="マジック同好会ポスター"
+        src="/img/circle/magic/poster.webp"
+      />
+    </p>
   </div>
 </template>
 <script setup lang="ts">
@@ -40,5 +47,8 @@ export default {
 <style lang="scss" scoped>
 p {
   margin: 50px 0;
+  .poster {
+    height: 70vh;
+  }
 }
 </style>
