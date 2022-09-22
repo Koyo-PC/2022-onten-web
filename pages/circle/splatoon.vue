@@ -8,11 +8,7 @@
       この同好会では、人気ゲーム「スプラトゥーン」シリーズの歴史や魅力について、ゲームをやり込んだメンバーが色んな展示を行っています。<br />
       スプラトゥーンをよく知る人はもちろん、全く知らないという人でも結構楽しめると思いますので、是非立ち寄ってみてください。
     </p>
-    <img
-      class="spla-head-img"
-      src="/img/circle/splatoon/head_image.webp"
-      alt=""
-    />
+    <img class="spla-head-img" src="/files/splatoon.pdf" alt="" />
   </div>
 </template>
 <script setup lang="ts">
