@@ -113,10 +113,10 @@
     "loc": [15, 17],
     "spread": true
   },
-  "正門": {
+  "昇降口": {
     "floor": 0,
-    "building": 1,
-    "loc": [17.5, 19.5],
+    "building": 0,
+    "loc": [5, 9],
     "spread": true
   },
   "通用門": {
