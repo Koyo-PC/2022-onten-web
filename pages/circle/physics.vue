@@ -10,6 +10,8 @@
     <div id="doc">
       <h2>2022年度 部誌</h2>
       <PDF src="/files/physics.pdf" />
+      <h2>2022年度 部誌 オンライン限定盤</h2>
+      <PDF src="/files/physics_2.pdf" />
     </div>
   </div>
 </template>
