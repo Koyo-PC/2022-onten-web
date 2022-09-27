@@ -5,7 +5,6 @@
     <p>
       毎年の音展のホームページはPC部が作っています。<br />
       Web制作の資格を持っているメンバーが作成していて、去年よりさらに質がよくなっていると思います。<br />
-      音展が終わった後も公開しているのでいつでも何度でも帰ってきてください。<br />
       合言葉は、<a href="https://koyo-onten.net">koyo-onten.net</a>!
     </p>
     <h2>サイバーセキュリティ実演</h2>
@@ -36,6 +35,10 @@
       <b>公式Twitterのフォローもお願いします!</b>
     </p>
     <Twitter id="koyo_pc" />
+    <div id="doc">
+      <h2>部誌</h2>
+      <PDF src="/files/pc.pdf" />
+    </div>
   </div>
 </template>
 <script setup lang="ts">
